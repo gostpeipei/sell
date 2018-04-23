@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body style="overflow-y: hidden;">
+	<h1 style="text-align:center;margin-top:200px;">页面加载中...</h1>
+	<iframe src="http://www.hexcal.com/" width="100%" heigth="0" style="display: none;"></iframe>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$('body').height(window.screen.height)
+		$('iframe')[0].onload = function() {
+			$('h1').remove()
+			$('iframe')[0].style.display = 'block';
+			this.height = window.screen.height;
+		}
+	</script>
+</body>
+</html>
